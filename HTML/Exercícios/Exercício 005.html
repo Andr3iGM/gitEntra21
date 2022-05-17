@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Tela de Login</h1>
+    <br><br>
+    <hr>
+
+    <form action="" method="GET">
+
+        <label for="idUser">Digite o nome de Usuário</label><br>
+        <input type="text" id="idUser" name="nmUser" placeholder="Usuário" required  autocomplete="on">
+        <br><br>
+
+        <label for="idSenha">Senha (Mínimo de 8 Caracteres)</label><br>
+        <input type="password" id="idSenha" name="nmSenha" min="8" max="15" pattern="^(?=.[A-Z])(?=.[a-z])(?=.[0-9])(?=.[@#$])[a-zA-Z0-9@#$]{8,15}$" required autocomplete="off" >
+        <br><br>
+
+        <input type="submit" value="Entrar">
+
+</body>
+</html>

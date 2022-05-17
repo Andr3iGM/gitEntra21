@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label for="idNome">Nome</label><br>
+            <input type="text" id="idNome" name="nmNome" placeholder="Nome" required  autocomplete="off">
+            <br><br>
+            <input type="text" id="idCopia" name="nmCopia" autocomplete="off" disabled>
+            <br><br>
+
+            <input type="button" id="idClique" name="nmClique" onclick="pegarNome()" value="Confirmar">
+
+    <script>
+
+        var nome
+
+        function pegarNome(){
+            nome = document.getElementById("idNome").value
+            document.getElementById("idCopia").value = nome
+            console.log("Nome: " + nome)
+        }
+
+    </script>
+</body>
+</html>
