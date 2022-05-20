@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="">
+        <label for="idNascimento">Digite a data de seu Nascimento: </label><br>
+        <input type="number" id="idNascimento" name="nmNascimento">
+        <br><br>
+        <output id="idOut"></output><br>
+        <br><br>
+        <input type="button" id="idBotao" value="Enviar" onclick="enviar()">
+    </form>
+
+    <script>
+
+        function enviar() {
+            let nascimento = Number(document.getElementById("idNascimento").value)
+            const saida = document.getElementById("idOut")
+
+            nascimento + 18
+            
+            if (nascimento == 2022 ) {
+                saida.value = "Você pode se alistar"
+            } else if (nascimento == 2023) {
+                saida.value = "Falta 1 ano para você poder se alistar"
+            } else if (nascimento == 2024) {
+                saida.value = "Faltam 2 anos para você poder se alistar"
+            } else if (nascimento == 2025) {
+                saida.value = "Faltam 3 anos para você poder se alistar"
+            } else if (nascimento == 2026) {
+                saida.value = "Faltam 4 anos para você poder se alistar"
+            } else if (nascimento == 2027) {
+                saida.value = "Faltam 5 anos para você poder se alistar"
+            } else if (nascimento == 2028) {
+                saida.value = "Faltam 6 anos para você poder se alistar"
+            } else if (nascimento == 2029) {
+                saida.value = "Faltam 7 anos para você poder se alistar"
+            } else if (nascimento == 2030) {
+                saida.value = "Faltam 8 anos para você poder se alistar"
+            } else if (nascimento == 2031) {
+                saida.value = "Faltam 9 anos para você poder se alistar"
+            } else if (nascimento == 2032) {
+                saida.value = "Faltam 10 anos para você poder se alistar"
+            } else if (nascimento == 2033) {
+                saida.value = "Faltam 11 anos para você poder se alistar"
+            } else if (nascimento == 2034) {
+                saida.value = "Faltam 12 anos para você poder se alistar"
+            } else if (nascimento == 2035) {
+                saida.value = "Faltam 13 anos para você poder se alistar"
+            } else if (nascimento == 2036) {
+                saida.value = "Faltam 14 anos para você poder se alistar"
+            } else if (nascimento == 2037) {
+                saida.value = "Faltam 15 anos para você poder se alistar"
+            } else if (nascimento == 2038) {
+                saida.value = "Faltam 16 anos para você poder se alistar"
+            } else if (nascimento == 2039) {
+                saida.value = "Faltam 17 anos para você poder se alistar"
+            } else if (nascimento == 2040) {
+                saida.value = "Faltam 18 anos para você poder se alistar"
+            } else if (nascimento < 2021){
+                saida.value = "O prazo para o alistamento já expirou"
+            } else
+                saida.value = "VOCÊ AINDA NÃO NASCEU"
+        }
+
+
+    
+    
+
+    </script>
+</body>
+</html>

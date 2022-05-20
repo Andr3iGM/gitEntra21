@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Document</title>
+   </head>
+   <body>
+      <form action="">
+         <label for="idCapital">Qual o nome da Capital do Brasil?</label><br>
+         <input type="text" id="idCapital" name="nmCapital" required> <br>
+         <br><br>
+         <output id="idOut"></output>
+         <input type="button" value="Responder" onclick="confirmar()">
+         <br><br>
+      </form>
+      <script>
+         function confirmar(){
+             var resposta = document.getElementById("idCapital").value 
+             var saida = document.getElementById("idOut")
+         
+             if (resposta == "Brasília") {
+                 saida.value = "A resposta está correta"
+         
+             } else if (resposta == "Brasilia") {
+                 saida.value = "A resposta está correta"
+         
+             } else if (resposta == "brasilia") {
+                 saida.value = "A resposta está correta"
+         
+             } else if (resposta == "brasília") {
+                 saida.value = "A resposta está correta"
+         
+             } else {
+                 saida.value = "A resposta está incorreta"
+             }
+         }
+         
+      </script>
+   </body>
+</html>
