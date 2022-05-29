@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="">
+
+        <label for="idNomeAluno">Nome</label><br>
+        <input type="text" id="idNomeAluno" name="nmNomeAluno" placeholder="Digite o nome do aluno" required><br>
+        <br><br>
+        <label for="idNota1">Primeira Nota</label><br>
+        <input type="number" id="idNota1" name="nmNota1"><br>
+        <br><br>
+        <label for="idNota2">Segunda Nota</label><br>
+        <input type="number" id="idNota2" name="nmNota2"><br>
+        <br><br>
+        <label for="idNota3">Terceira Nota</label><br>
+        <input type="number" id="idNota3" name="nmNota3"><br>
+        <br><br>
+        <label for="idNota4">Quarta Nota</label><br>
+        <input type="number" id="idNota4" name="nmNota4"><br>
+        <br><br>
+        <hr>
+        <input type="button" value="Adicionar Aluno" id="idAdicionar" onclick="adicionarAluno()"><br>
+        <br>
+        <input type="button" value="Relatório" id="idRelatorio" onclick="relatorio()"><br>
+        
+    </form>
+
+    <script>
+
+        function adicionarAluno() {
+
+        const nome = document.querySelector("#idNomeAluno").value
+        const nota1 = Number(document.querySelector("#idNota1").value)
+        const nota2 = Number(document.querySelector("#idNota2").value)
+        const nota3 = Number(document.querySelector("#idNota3").value)
+        const nota4 = Number(document.querySelector("#idNota4").value)
+        const média = (nota1 + nota2 + nota3 + nota4) / 4
+
+        let relatorio = [nome, nota1, nota2, nota3, nota4, média]
+
+        for (var key in relatorio){
+            relatorio.push
+        }
+
+        console.log(relatorio)
+
+        document.querySelector("#idNomeAluno").value = ""
+        document.querySelector("#idNota1").value = ""
+        document.querySelector("#idNota2").value = ""
+        document.querySelector("#idNota3").value = ""
+        document.querySelector("#idNota4").value = ""
+        }
+
+        function relatorio(){
+
+            
+
+        }
+    </script>
+</body>
+</html>
