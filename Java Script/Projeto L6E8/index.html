@@ -1,22 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Document</title>
-    </head>
-    <body>
-
-        <script>
-            var numero = []
-
-            for (let i = 0; i  < 15; i++ ){
-                numero[i] = Math.PI
-            }
-
-            console.log(numero)
-        </script>
-        
-    </body>
+   <head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Document</title>
+   </head>
+   <body>
+      <form action="">
+         <input type="number" id="idNumero" placeholder="Número">
+         <br><br>
+         <input type="button" value="Enviar" onclick="enviar()">
+         <input type="button" value="Relatorio" onclick="relatorio()">
+         <br><br>
+         <output id="idOutV"></output>
+         <br>
+         <output id="idOutI"></output>
+      </form>
+      <script>
+         var numeros = []
+         var outVetor = document.getElementById("idOutV")
+         var outItens = document.getElementById("idOutI")
+         outVetor.value = "Números Digitados: "
+         outItens.value = "Posições com multiplos de 10: "
+         
+         function enviar() {
+            numeros.push(Number(document.getElementById("idNumero").value))
+            document.getElementById("idNumero").value = ""
+         }
+         
+         function relatorio() {
+             console.table(numeros)
+             
+             for (let index = 0; index < numeros.length; index++) {
+                 outVetor.value = outVetor.value  + numeros[index] + " ; "
+                 
+                 if (numeros[index] % 10 == 0) {
+                     outItens.value = outItens.value + index + " ; "
+                 }
+             }
+         }
+         
+      </script>
+   </body>
 </html>

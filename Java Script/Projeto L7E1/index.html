@@ -1,68 +1,117 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <form action="">
-
-        <label for="idNomeAluno">Nome</label><br>
-        <input type="text" id="idNomeAluno" name="nmNomeAluno" placeholder="Digite o nome do aluno" required><br>
-        <br><br>
-        <label for="idNota1">Primeira Nota</label><br>
-        <input type="number" id="idNota1" name="nmNota1"><br>
-        <br><br>
-        <label for="idNota2">Segunda Nota</label><br>
-        <input type="number" id="idNota2" name="nmNota2"><br>
-        <br><br>
-        <label for="idNota3">Terceira Nota</label><br>
-        <input type="number" id="idNota3" name="nmNota3"><br>
-        <br><br>
-        <label for="idNota4">Quarta Nota</label><br>
-        <input type="number" id="idNota4" name="nmNota4"><br>
-        <br><br>
-        <hr>
-        <output></output>
-        <input type="button" value="Adicionar Aluno" id="idAdicionar" onclick="adicionarAluno()"><br>
-        <br>
-        <input type="button" value="Relatório" id="idRelatorio" onclick="relatorio()"><br>
-        
-    </form>
-
-    <script>
-
-        function adicionarAluno() {
-
-        const nome = document.querySelector("#idNomeAluno").value
-        const nota1 = Number(document.querySelector("#idNota1").value)
-        const nota2 = Number(document.querySelector("#idNota2").value)
-        const nota3 = Number(document.querySelector("#idNota3").value)
-        const nota4 = Number(document.querySelector("#idNota4").value)
-        const média = (nota1 + nota2 + nota3 + nota4) / 4
-
-        let relatorio = [nome, nota1, nota2, nota3, nota4, média]
-
-        for (var key in relatorio){
-            relatorio.push
-        }
-
-        console.log(relatorio)
-
-        document.querySelector("#idNomeAluno").value = ""
-        document.querySelector("#idNota1").value = ""
-        document.querySelector("#idNota2").value = ""
-        document.querySelector("#idNota3").value = ""
-        document.querySelector("#idNota4").value = ""
-        }
-
-        function relatorio(){
-
-            
-
-        }
-    </script>
-</body>
+   <head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Document</title>
+   </head>
+   <body>
+      <form action="">
+         <input type="number" id="idNota" placeholder="Nota" step="0.01">
+         <br><br>
+         <input type="button" value="Incluir" onclick="incluirNota()">
+         <input type="button" value="Questao A" onclick="questaoA1()">
+         <input type="button" value="Questao B" onclick="questaoB()">
+         <input type="button" value="Questao C" onclick="questaoC()">
+         <input type="button" value="Questao D" onclick="questaoD()">
+         <br><br>
+         <output id="idOutA"></output><br>
+         <output id="idOutB"></output><br>
+         <output id="idOutC"></output><br>
+         <output id="idOutD"></output>
+      </form>
+      <script>
+         var notas = []
+         
+         function incluirNota() {
+             notas.push(Number(document.getElementById("idNota").value))
+             document.getElementById("idNota").value = ""
+         }
+         
+         function questaoA() {
+             let saida = document.getElementById("idOutA")
+             let somaNotas = 0
+             let media = 0 
+         
+             notas.forEach(element => {
+                 somaNotas = somaNotas + element
+             });
+         
+             media = somaNotas / notas.length
+         
+             saida.value = "Média da turma: " + media
+         
+         }
+         
+         function questaoA1() {
+             console.log(notas);
+             let saida = document.getElementById("idOutA")
+         
+             let media = (notas.reduce(function(acumulador, elemento, index, array){
+                 return  acumulador = acumulador + elemento
+             }, 0)) / notas.length
+         
+             saida.value = "Média da turma: " + media
+         
+         }
+         
+         function questaoA3() {
+             console.log(notas);
+             let saida = document.getElementById("idOutA")
+         
+             let media = notas.reduce(function(acumulador, elemento, index, array){
+                 if (index == (notas.length - 1) ) {
+                     acumulador = acumulador + elemento
+                     return acumulador = acumulador / notas.length
+                 }else{
+                     return  acumulador = acumulador + elemento
+                 }
+         
+             }, 0)
+          
+         
+             saida.value = "Média da turma: " + media
+         
+         }
+         
+         function questaoB() {
+             let saida = document.getElementById("idOutB")
+         }
+         
+         function questaoC() {
+             let saida = document.getElementById("idOutC")
+             let maior = 0
+         
+             notas.forEach(element => {
+                 if (element > maior) {
+                     maior = element
+                 }
+             });
+         
+             saida.value = "A Maior nota é: " + maior
+         
+             return maior 
+         }
+         
+         
+         function questaoD() {
+             let saida = document.getElementById("idOutD")
+         
+             let indMaiorNota = notas.map(function(value, index, array) {
+                 if (value == 7) {
+                     return index
+                 }
+             })
+         
+             indMaiorNota = indMaiorNota.filter(function(value, index, array) {
+                 return value != undefined
+             })
+         
+             console.log(indMaiorNota);
+         
+         }
+         
+      </script>
+   </body>
 </html>
