@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+    <body>
+            <form action="">
+                <label for="idTemperaturaL">Temperatura:</label><br>
+                <input type="number" id="idTemperatura" name="nmTemperatura">
+                <br><br>
+                
+                <label for="idCelsiusL"> Celsius </label>
+                <input type="radio" id="idCelsius" name="nmTemp">
+                <br><br>
+                
+                <label for="idFahrenheitL">Fahrenheit</label>
+                <input type="radio" id="idFahrenheit" name="nmTemp">
+                <br><br>
+
+                <label for="idKelvinL">Kelvin</label>
+                <input type="radio" id="idKelvin" name="nmTemp">
+                <br><br>
+                
+                <input type="button" value="Ver temperatura" onclick="enviar()">
+                <br><br>
+                <output id="idOut"></output><br>
+                <output id="idOuti"></output>
+            
+                <br>
+        
+        </form>
+
+        <script>
+                    
+            
+            function enviar(){
+                
+                var temperatura = Number(document.getElementById("idTemperatura").value)
+                var isCelsius = document.getElementById("idCelsius").checked
+                var isFahrenheit = document.getElementById("idFahrenheit").checked
+                var isKelvin = document.getElementById("idKelvin").checked 
+                var celsius = 0
+                var fahrenheit = 0
+                var kelvin = 0 
+
+                    if (isCelsius) {
+                        fahrenheit = (Number((temperatura) * 1.8) + 32)
+                        kelvin = (Number(temperatura) + 273)
+                    
+                        document.getElementById("idOut").value = "A temperatura em  : " + fahrenheit.toFixed(2) + " °F " 
+                        document.getElementById("idOuti").value = "A temperatura é : " + kelvin.toFixed(2) + " k "    
+                    
+                    }else if(isFahrenheit){
+                        celsius = (Number(temperatura) - 32)/1.8
+                        kelvin = (Number(temperatura) - 32) * 5 / 9 + 273
+                    
+                        document.getElementById("idOut").value = "A temperatura em  : " + celsius.toFixed(2) + " °C " 
+                        document.getElementById("idOuti").value = "A temperatura é : " + kelvin.toFixed(2) + " k "    
+                    }else {
+                        celsius = (Number(temperatura) - 273)
+                        fahrenheit = (Number(temperatura) - 273)* 1.8 + 32
+                    
+                        document.getElementById("idOut").value = "A temperatura em  : " + celsius.toFixed(2) + " °C " 
+                        document.getElementById("idOuti").value = "A temperatura é : " + fahrenheit.toFixed(2) + " k "    
+                    }  
+                
+            }    
+              
+
+           
+        </script>
+
+    </body>
+</html>
