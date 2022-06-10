@@ -37,12 +37,27 @@
          </div>
       </div>
       <script>
-
          function display(val){
          
          document.getElementById('idResultado').value += val
-
+         
          return val
+         }
+         
+         function calcular(){
+         
+         let x = document.getElementById('idResultado').value
+         let y = eval(x);
+         document.getElementById('idResultado').value = y
+         
+         return y
+         
+         }
+         
+         function limparTela(){
+         
+         document.getElementById('idResultado').value = ''
+         
          }
          
       </script>
