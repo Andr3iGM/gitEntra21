@@ -9,22 +9,39 @@
 </head>
 
 <body>
-<button onclick="enviar()">Enviar</button>
+    <form action="">
+        <input type="number" name="nmNumero" id="idNumero" placeholder="Digite um número de 1 a 15"><br>
+        <button type="button" onclick="enviar()">Enviar</button>
+        <br><br>
+        <output id="idOut"></output>
+        <br>
+        <output id="idOutI"></output>
+        <br>
+    </form>
     <script>
-
-        function enviar(){
 
         var numeros = []
 
         for (let i = 1; i < 16; i++) {
             let numAle = parseInt(Math.random() * 16)
             numeros.push(numAle)
+            if (numeros == 0) {
+                numeros = 1
+            }
+        }
+        console.log(numeros)
+
+        function enviar() {
+            let numeroDigitado = document.getElementById("idNumero").value
+
+            if (numeroDigitado = numeros) {
+                document.getElementById("idOut").value = numeros
+            }
         }
 
-        console.log(numeros)
-    }
-    </script>
 
+
+    </script>
 </body>
 
 </html>
